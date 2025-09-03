@@ -1,3 +1,4 @@
+/* Layout */
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f9;
@@ -14,9 +15,11 @@ body {
   border-radius: 12px;
   padding: 20px;
   width: 600px;
+  max-width: 92vw;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Headings & text */
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -24,28 +27,53 @@ h1 {
 
 .question {
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  font-weight: bold;
 }
 
+/* Options as buttons */
 .options {
-  list-style: none;
-  padding: 0;
+  display: grid;
+  gap: 12px;
 }
 
-.options li {
-  background: #f0f0f0;
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 8px;
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 2px solid #d8dee9;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  background: #f9fafb;
+  font-size: 16px;
+  text-align: left;
+  transition: background .2s, border-color .2s, transform .04s;
 }
 
-.options li:hover {
-  background: #ddd;
+.option-btn:active { transform: translateY(1px); }
+
+.option-letter {
+  font-weight: 700;
+  color: #2563eb; /* blue-600 */
+  min-width: 22px;
 }
 
-button {
+.option-btn:hover {
+  background: #eef2ff;    /* indigo-50 */
+  border-color: #2563eb;  /* blue-600 */
+}
+
+.option-btn.selected {
+  background: #2563eb;
+  border-color: #1e40af; /* blue-800 */
+  color: #fff;
+}
+
+.option-btn.selected .option-letter { color: #fff; }
+
+/* Next button */
+#nextBtn {
   display: block;
   margin: 20px auto 0;
   padding: 10px 20px;
@@ -53,15 +81,14 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #007bff;
+  background: #22c55e; /* green-500 */
   color: #fff;
-  transition: background 0.3s;
+  transition: background .2s;
 }
 
-button:hover {
-  background: #0056b3;
-}
+#nextBtn:hover { background: #16a34a; }
 
+/* Result */
 .result {
   text-align: center;
   font-size: 20px;
